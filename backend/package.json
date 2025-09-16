@@ -1,0 +1,23 @@
+{
+  "name": "huaban-backend",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Huaban (画伴) backend service - Node.js + MongoDB + S3",
+  "main": "src/app.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "node src/app.js",
+    "seed:artwork": "node scripts/seed_artwork.js",
+    "fix:keys": "node scripts/fix_artwork_keys.js"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.587.0",
+    "@aws-sdk/lib-storage": "^3.888.0",
+    "@aws-sdk/s3-request-presigner": "^3.587.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mongodb": "^6.8.0",
+    "nanoid": "^5.0.7"
+  }
+}

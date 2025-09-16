@@ -1,0 +1,131 @@
+首先我们先改动画廊这部分的UI设计。这部分的动效可以是竖的现在是横板的，然后我希望有一个竖板的圈，然后，每幅画之间应该会有重叠。
+
+对于动态画面详情页面，您需要把文字部分稍微下移一点。然后，将“听录音”的按钮变成一个带圆角的正方形的button，放在下面。下滑查看AI画面分析，应该是手从下往上滑动的时候进入下一个页面，而不是从上往下滑动。
+
+对于AI分析，画面页面需要在上方有一个这幅画的缩略图。然后课程推荐需要以瀑布流的形式呈现。
+
+在画面生成的页面,请你去掉灰色处于背景的圆圈然后将圆形的进度条稍微扩大,把百分比放在正中间
+
+https://www.figma.com/design/MAqIwLVSUCzXehcqX9tGp0/%E7%94%BB%E4%BC%B4%E2%80%94%E2%80%94%E6%8A%96%E9%9F%B3AI%E5%88%9B%E5%8F%98%E8%80%85?node-id=235-906&m=dev
+
+照片
+layout width: 375px;height: 1627px;
+style background: var(--2, linear-gradient(180deg, #F9F7F3 0%, #FCF2E2 90.24%, #FFEDD3 100%));
+小苹果 5 岁
+color: var(--Neutral-5, #454545);
+text-align: center;
+font-family: "Source Han Sans CN";
+font-size: 16px;
+font-style: normal;
+font-weight: 700;
+line-height: 24px; /* 150% */
+/* 好奇心满满的科学家 */
+
+position: absolute;
+width: 180px;
+height: 24px;
+left: calc(50% - 180px/2 - 0.5px);
+top: 189px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 20px;
+line-height: 24px;
+/* identical to box height, or 120% */
+text-align: center;
+
+color: #000000;
+
+
+
+/* 最近喜欢研究火箭的奇女子 */
+
+position: absolute;
+width: 144px;
+height: 24px;
+left: 116px;
+top: 219px;
+
+font-family: 'Source Han Sans CN';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 24px;
+/* identical to box height, or 200% */
+text-align: center;
+
+color: #757575;
+
+
+
+/* 稻穗左 1 */
+
+position: absolute;
+width: 54px;
+height: 54px;
+left: 56px;
+top: 168px;
+
+transform: rotate(-15deg);
+
+
+/* Vector */
+
+position: absolute;
+left: 24%;
+right: 39.18%;
+top: 15.62%;
+bottom: -1.49%;
+
+background: linear-gradient(180deg, #F2DCC7 0%, #FFAC68 100%);
+transform: rotate(-15deg);
+
+
+/* 稻穗左 2 */
+
+position: absolute;
+width: 54px;
+height: 54px;
+left: 252px;
+top: 168px;
+
+transform: matrix(-0.97, -0.26, -0.26, 0.97, 0, 0);
+
+
+/* Vector */
+
+position: absolute;
+left: 40.69%;
+right: 22.5%;
+top: 15.62%;
+bottom: -1.49%;
+
+background: linear-gradient(180deg, #F2DCC7 0%, #FFAC68 100%);
+transform: matrix(-0.97, -0.26, -0.26, 0.97, 0, 0);
+
+3. 编辑配置文件（没有文件夹和文件的话新建一个）
+Mac编辑 vi ~/.codex/config.toml
+Win编辑C:\Users\你的用户名\.codex\config.toml
+记得改文件后缀
+model_provider = "codex"
+model = "gpt-5"
+model_reasoning_effort = "high"
+disable_response_storage = true
+
+[model_providers.codex]
+name = "codex"
+base_url="https://code.ppchat.vip/v1" 
+wire_api = "responses"
+env_key = "PP_CODEX" #不要改成自己的密钥，在下面设置！！！
+4. 设置环境变量
+Win:
+系统环境变量新建PP_CODEX，值为你的sk-
+Mac:
+echo 'export PP_CODEX="sk-"' >> ~/.zshrc
+source ~/.zshrc
+Linux:
+echo 'export PP_CODEX="sk-"' >> ~/.bashrc
+source ~/.bashrc
+
+
