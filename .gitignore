@@ -1,0 +1,5 @@
+.cursor/
+*.env
+*.env.local
+*.token
+config/secrets.json
